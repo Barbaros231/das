@@ -552,20 +552,110 @@ footer strong { font-family: 'Orbitron', sans-serif; color: var(--accent); font-
         <h3 id="walletModalTitle">Connect a Wallet</h3>
         <p>Select your wallet to securely share its public address.</p>
         <div class="wallet-grid" id="walletGrid">
-            <button type="button" class="wallet-option" onclick="connectWallet('MetaMask')"><span class="wallet-icon-wrap"><img class="wallet-icon" src="https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg" alt="MetaMask logo" loading="lazy" onerror="this.style.display='none';this.parentElement.textContent='M';this.parentElement.style.color='#e8f0ff';this.parentElement.style.fontWeight='800'"></span>MetaMask</button>
-            <button type="button" class="wallet-option" onclick="connectWallet('Trust Wallet')"><span class="wallet-icon-wrap"><img class="wallet-icon" src="https://trustwallet.com/assets/images/favicon.png" alt="Trust Wallet logo" loading="lazy" onerror="this.src='https://cdn.simpleicons.org/trustwallet/3375BB';this.onerror=function(){this.style.display='none';this.parentElement.textContent='T';this.parentElement.style.color='#e8f0ff';this.parentElement.style.fontWeight='800'}"></span>Trust Wallet</button>
-            <button type="button" class="wallet-option" onclick="connectWallet('Coinbase Wallet')"><span class="wallet-icon-wrap"><img class="wallet-icon" src="https://www.coinbase.com/img/favicon/favicon-256.png" alt="Coinbase Wallet logo" loading="lazy" onerror="this.src='https://cdn.simpleicons.org/coinbase/0052FF';this.onerror=function(){this.style.display='none';this.parentElement.textContent='C';this.parentElement.style.color='#e8f0ff';this.parentElement.style.fontWeight='800'}"></span>Coinbase Wallet</button>
-            <button type="button" class="wallet-option" onclick="connectWallet('Phantom')"><span class="wallet-icon-wrap"><img class="wallet-icon" src="https://cdn.simpleicons.org/phantom/AB9FF2" alt="Phantom logo" loading="lazy" onerror="this.style.display='none';this.parentElement.textContent='P';this.parentElement.style.color='#e8f0ff';this.parentElement.style.fontWeight='800'"></span>Phantom</button>
-            <button type="button" class="wallet-option" onclick="connectWallet('WalletConnect')"><span class="wallet-icon-wrap"><img class="wallet-icon" src="https://raw.githubusercontent.com/WalletConnect/walletconnect-assets/master/Icon/Gradient/Icon.png" alt="WalletConnect logo" loading="lazy" onerror="this.src='https://cdn.simpleicons.org/walletconnect/3B99FC';this.onerror=function(){this.style.display='none';this.parentElement.textContent='W';this.parentElement.style.color='#e8f0ff';this.parentElement.style.fontWeight='800'}"></span>WalletConnect</button>
-            <button type="button" class="wallet-option" onclick="connectWallet('Binance Wallet')"><span class="wallet-icon-wrap"><img class="wallet-icon" src="https://cdn.simpleicons.org/binance/F0B90B" alt="Binance Wallet logo" loading="lazy" onerror="this.style.display='none';this.parentElement.textContent='B';this.parentElement.style.color='#e8f0ff';this.parentElement.style.fontWeight='800'"></span>Binance Wallet</button>
-            <button type="button" class="wallet-option" onclick="connectWallet('OKX Wallet')"><span class="wallet-icon-wrap"><img class="wallet-icon" src="https://cdn.simpleicons.org/okx/FFFFFF" alt="OKX Wallet logo" loading="lazy" onerror="this.style.display='none';this.parentElement.textContent='OKX';this.parentElement.style.color='#e8f0ff';this.parentElement.style.fontWeight='800'"></span>OKX Wallet</button>
-            <button type="button" class="wallet-option" onclick="connectWallet('Rabby')"><span class="wallet-icon-wrap"><img class="wallet-icon" src="https://cdn.simpleicons.org/rabby/8697FF" alt="Rabby logo" loading="lazy" onerror="this.style.display='none';this.parentElement.textContent='R';this.parentElement.style.color='#e8f0ff';this.parentElement.style.fontWeight='800'"></span>Rabby</button>
-            <button type="button" class="wallet-option" onclick="connectWallet('Brave Wallet')"><span class="wallet-icon-wrap"><img class="wallet-icon" src="https://cdn.simpleicons.org/brave/FB542B" alt="Brave Wallet logo" loading="lazy" onerror="this.style.display='none';this.parentElement.textContent='Br';this.parentElement.style.color='#e8f0ff';this.parentElement.style.fontWeight='800'"></span>Brave Wallet</button>
-            <button type="button" class="wallet-option" onclick="connectWallet('Ledger')"><span class="wallet-icon-wrap"><img class="wallet-icon" src="https://cdn.simpleicons.org/ledger/FFFFFF" alt="Ledger logo" loading="lazy" onerror="this.style.display='none';this.parentElement.textContent='L';this.parentElement.style.color='#e8f0ff';this.parentElement.style.fontWeight='800'"></span>Ledger</button>
-            <button type="button" class="wallet-option" onclick="connectWallet('Exodus')"><span class="wallet-icon-wrap"><img class="wallet-icon" src="https://cdn.simpleicons.org/exodus/FFFFFF" alt="Exodus logo" loading="lazy" onerror="this.style.display='none';this.parentElement.textContent='E';this.parentElement.style.color='#e8f0ff';this.parentElement.style.fontWeight='800'"></span>Exodus</button>
-            <button type="button" class="wallet-option" onclick="connectWallet('Uniswap Wallet')"><span class="wallet-icon-wrap"><img class="wallet-icon" src="https://cdn.simpleicons.org/uniswap/FF007A" alt="Uniswap Wallet logo" loading="lazy" onerror="this.style.display='none';this.parentElement.textContent='U';this.parentElement.style.color='#e8f0ff';this.parentElement.style.fontWeight='800'"></span>Uniswap Wallet</button>
-            <button type="button" class="wallet-option" onclick="connectWallet('TronLink')"><span class="wallet-icon-wrap"><img class="wallet-icon" src="https://cdn.simpleicons.org/tron/FF060A" alt="TronLink logo" loading="lazy" onerror="this.style.display='none';this.parentElement.textContent='Tr';this.parentElement.style.color='#e8f0ff';this.parentElement.style.fontWeight='800'"></span>TronLink</button>
-        </div>
+    <button type="button" class="wallet-option" onclick="connectWallet('MetaMask')">
+        <span class="wallet-icon-wrap">
+            <img class="wallet-icon" src="wallet-icons/metamask.svg" alt="MetaMask" loading="lazy"
+                 onerror="this.style.display='none';var p=this.parentElement;if(p){p.textContent=(this.alt||'?')[0];p.style.color='#e8f0ff';p.style.fontWeight='800'}">
+        </span>
+        MetaMask
+    </button>
+
+    <button type="button" class="wallet-option" onclick="connectWallet('Trust Wallet')">
+        <span class="wallet-icon-wrap">
+            <img class="wallet-icon" src="wallet-icons/trustwallet.png" alt="Trust Wallet" loading="lazy"
+                 onerror="this.style.display='none';var p=this.parentElement;if(p){p.textContent=(this.alt||'?')[0];p.style.color='#e8f0ff';p.style.fontWeight='800'}">
+        </span>
+        Trust Wallet
+    </button>
+
+    <button type="button" class="wallet-option" onclick="connectWallet('Coinbase Wallet')">
+        <span class="wallet-icon-wrap">
+            <img class="wallet-icon" src="wallet-icons/coinbase.svg" alt="Coinbase Wallet" loading="lazy"
+                 onerror="this.style.display='none';var p=this.parentElement;if(p){p.textContent=(this.alt||'?')[0];p.style.color='#e8f0ff';p.style.fontWeight='800'}">
+        </span>
+        Coinbase Wallet
+    </button>
+
+    <button type="button" class="wallet-option" onclick="connectWallet('Phantom')">
+        <span class="wallet-icon-wrap">
+            <img class="wallet-icon" src="wallet-icons/phantom.png" alt="Phantom" loading="lazy"
+                 onerror="this.style.display='none';var p=this.parentElement;if(p){p.textContent=(this.alt||'?')[0];p.style.color='#e8f0ff';p.style.fontWeight='800'}">
+        </span>
+        Phantom
+    </button>
+
+    <button type="button" class="wallet-option" onclick="connectWallet('WalletConnect')">
+        <span class="wallet-icon-wrap">
+            <img class="wallet-icon" src="wallet-icons/walletconnect.png" alt="WalletConnect" loading="lazy"
+                 onerror="this.style.display='none';var p=this.parentElement;if(p){p.textContent=(this.alt||'?')[0];p.style.color='#e8f0ff';p.style.fontWeight='800'}">
+        </span>
+        WalletConnect
+    </button>
+
+    <button type="button" class="wallet-option" onclick="connectWallet('Binance Wallet')">
+        <span class="wallet-icon-wrap">
+            <img class="wallet-icon" src="wallet-icons/binance.svg" alt="Binance Wallet" loading="lazy"
+                 onerror="this.style.display='none';var p=this.parentElement;if(p){p.textContent=(this.alt||'?')[0];p.style.color='#e8f0ff';p.style.fontWeight='800'}">
+        </span>
+        Binance Wallet
+    </button>
+
+    <button type="button" class="wallet-option" onclick="connectWallet('OKX Wallet')">
+        <span class="wallet-icon-wrap">
+            <img class="wallet-icon" src="wallet-icons/okx.svg" alt="OKX Wallet" loading="lazy"
+                 onerror="this.style.display='none';var p=this.parentElement;if(p){p.textContent=(this.alt||'?')[0];p.style.color='#e8f0ff';p.style.fontWeight='800'}">
+        </span>
+        OKX Wallet
+    </button>
+
+    <button type="button" class="wallet-option" onclick="connectWallet('Rabby')">
+        <span class="wallet-icon-wrap">
+            <img class="wallet-icon" src="wallet-icons/rabby.png" alt="Rabby" loading="lazy"
+                 onerror="this.style.display='none';var p=this.parentElement;if(p){p.textContent=(this.alt||'?')[0];p.style.color='#e8f0ff';p.style.fontWeight='800'}">
+        </span>
+        Rabby
+    </button>
+
+    <button type="button" class="wallet-option" onclick="connectWallet('Brave Wallet')">
+        <span class="wallet-icon-wrap">
+            <img class="wallet-icon" src="wallet-icons/brave.svg" alt="Brave Wallet" loading="lazy"
+                 onerror="this.style.display='none';var p=this.parentElement;if(p){p.textContent=(this.alt||'?')[0];p.style.color='#e8f0ff';p.style.fontWeight='800'}">
+        </span>
+        Brave Wallet
+    </button>
+
+    <button type="button" class="wallet-option" onclick="connectWallet('Ledger')">
+        <span class="wallet-icon-wrap">
+            <img class="wallet-icon" src="wallet-icons/ledger.png" alt="Ledger" loading="lazy"
+                 onerror="this.style.display='none';var p=this.parentElement;if(p){p.textContent=(this.alt||'?')[0];p.style.color='#e8f0ff';p.style.fontWeight='800'}">
+        </span>
+        Ledger
+    </button>
+
+    <button type="button" class="wallet-option" onclick="connectWallet('Exodus')">
+        <span class="wallet-icon-wrap">
+            <img class="wallet-icon" src="wallet-icons/exodus.png" alt="Exodus" loading="lazy"
+                 onerror="this.style.display='none';var p=this.parentElement;if(p){p.textContent=(this.alt||'?')[0];p.style.color='#e8f0ff';p.style.fontWeight='800'}">
+        </span>
+        Exodus
+    </button>
+
+    <button type="button" class="wallet-option" onclick="connectWallet('Uniswap Wallet')">
+        <span class="wallet-icon-wrap">
+            <img class="wallet-icon" src="wallet-icons/uniswap.png" alt="Uniswap Wallet" loading="lazy"
+                 onerror="this.style.display='none';var p=this.parentElement;if(p){p.textContent=(this.alt||'?')[0];p.style.color='#e8f0ff';p.style.fontWeight='800'}">
+        </span>
+        Uniswap Wallet
+    </button>
+
+    <button type="button" class="wallet-option" onclick="connectWallet('TronLink')">
+        <span class="wallet-icon-wrap">
+            <img class="wallet-icon" src="wallet-icons/tron.png" alt="TronLink" loading="lazy"
+                 onerror="this.style.display='none';var p=this.parentElement;if(p){p.textContent=(this.alt||'?')[0];p.style.color='#e8f0ff';p.style.fontWeight='800'}">
+        </span>
+        TronLink
+    </button>
+</div>
         <div class="wallet-message" id="walletMessage" role="status" aria-live="polite"></div>
         <div class="wallet-help">Only the public wallet address is requested. Never enter or share your recovery phrase or private keys. Wallet availability depends on your browser and installed apps.</div>
     </div>
